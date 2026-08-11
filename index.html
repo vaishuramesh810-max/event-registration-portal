@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkFest – Igniting Talent. Celebrating Culture.</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="SparkFest is a premier college cultural event management platform. Explore, register, and win in dance, music, theater, tech, and art events.">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="#home" class="logo" id="header-logo">
+                SparkFest<span class="logo-dot"></span>
+            </a>
+            
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#home" class="nav-item active" id="nav-link-home">Home</a></li>
+                <li><a href="#about" class="nav-item" id="nav-link-about">About</a></li>
+                <li><a href="#events" class="nav-item" id="nav-link-events">Events</a></li>
+                <li><a href="#schedule" class="nav-item" id="nav-link-schedule">Schedule</a></li>
+                <li><a href="#gallery" class="nav-item" id="nav-link-gallery">Gallery</a></li>
+                <li><a href="#winners" class="nav-item" id="nav-link-winners">Winners</a></li>
+                <li><a href="#contact" class="nav-item" id="nav-link-contact">Contact</a></li>
+                <li><button class="admin-trigger" id="nav-admin-login-btn">Admin Panel</button></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#register" class="btn btn-primary btn-sm" id="nav-register-btn">Register Now</a>
+            </div>
+
+            <button class="menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg-media" id="hero-bg-image" style="background-image: url('assets/hero_bg.png');"></div>
+        <div class="hero-particles" id="hero-particles-canvas"></div>
+        
+        <div class="container hero-content">
+            <span class="hero-badge" id="hero-celebrate-badge"><i class="fa-solid fa-sparkles"></i> The Ultimate Cultural Fest 2026</span>
+            <h1 class="hero-title" id="main-hero-title">
+                Igniting Talent. <span class="gradient-text">Celebrating Culture.</span>
+            </h1>
+            <div class="typing-container" id="hero-typing-area">
+                <span id="typing-text">Unleash Your Creativity</span><span class="typed-cursor"></span>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="#events" class="btn btn-primary" id="hero-btn-explore">Explore Events <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#register" class="btn btn-secondary" id="hero-btn-register">Register Now <i class="fa-solid fa-ticket"></i></a>
+            </div>
+
+            <!-- Animated Live Counters -->
+            <div class="hero-stats-row" id="hero-live-stats">
+                <div class="hero-stat-card glass-panel" id="stat-events">
+                    <div class="hero-stat-num" id="counter-events">0</div>
+                    <div class="hero-stat-label">Total Events</div>
+                </div>
+                <div class="hero-stat-card glass-panel" id="stat-participants">
+                    <div class="hero-stat-num" id="counter-participants">0</div>
+                    <div class="hero-stat-label">Participants</div>
+                </div>
+                <div class="hero-stat-card glass-panel" id="stat-colleges">
+                    <div class="hero-stat-num" id="counter-colleges">0</div>
+                    <div class="hero-stat-label">Colleges</div>
+                </div>
+                <div class="hero-stat-card glass-panel" id="stat-prizes">
+                    <div class="hero-stat-num" id="counter-prizes">0</div>
+                    <div class="hero-stat-label">Prizes Worth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-details" id="about-details-content">
+                    <h2 class="section-title">About <span class="gradient-text">SparkFest</span></h2>
+                    <h3>Where Passion Meets Performance</h3>
+                    <p>SparkFest is the premier inter-collegiate cultural festival, bringing together the brightest minds, the most talented performers, and the most creative artists under one virtual roof. Hosted annually, it offers a platform to exhibit skills in music, dance, digital arts, coding, theater, and gaming.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-box glass-panel" id="feat-innovation">
+                            <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <h4>Innovation</h4>
+                            <p>Modern tech and digital tracks running alongside classic performing arts.</p>
+                        </div>
+                        <div class="feature-box glass-panel" id="feat-diversity">
+                            <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                            <h4>Diversity</h4>
+                            <p>Over 50+ colleges participating in a melting pot of cultural expressions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Countdown -->
+                <div class="about-countdown" id="about-event-countdown">
+                    <div class="countdown-container glass-panel">
+                        <h3 class="countdown-title">Festival Starts In</h3>
+                        <div class="countdown-timer" id="timer-display">
+                            <div class="time-segment">
+                                <span class="time-num" id="days-val">00</span>
+                                <span class="time-lbl">Days</span>
+                            </div>
+                            <div class="time-segment">
+                                <span class="time-num" id="hours-val">00</span>
+                                <span class="time-lbl">Hrs</span>
+                            </div>
+                            <div class="time-segment">
+                                <span class="time-num" id="min-val">00</span>
+                                <span class="time-lbl">Mins</span>
+                            </div>
+                            <div class="time-segment">
+                                <span class="time-num" id="sec-val">00</span>
+                                <span class="time-lbl">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Announcements Bulletin -->
+    <section class="announcements-section" id="announcements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Live <span class="gradient-text">Announcements</span></h2>
+                <p class="section-subtitle">Stay updated with real-time news, schedule edits, and result updates from the coordinators.</p>
+            </div>
+            
+            <div class="announcements-board glass-panel" id="live-announcements-container">
+                <div class="announcements-list" id="announcements-list-view">
+                    <!-- Announcements dynamically injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore <span class="gradient-text">Events</span></h2>
+                <p class="section-subtitle">Browse through dozens of exciting categories. Search for your niche or select from the filters below.</p>
+            </div>
+
+            <!-- Categories and Search -->
+            <div class="events-search-bar">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="event-search-input" placeholder="Search events by name, rules, coordinator...">
+                </div>
+            </div>
+
+            <div class="categories-tabs" id="category-filter-chips">
+                <button class="category-chip active" data-category="all" id="chip-all">All Events</button>
+                <button class="category-chip" data-category="music-dance" id="chip-dance">Music & Dance</button>
+                <button class="category-chip" data-category="fine-arts" id="chip-arts">Fine Arts</button>
+                <button class="category-chip" data-category="theater-drama" id="chip-theater">Theater & Drama</button>
+                <button class="category-chip" data-category="literary" id="chip-literary">Literary</button>
+                <button class="category-chip" data-category="fashion" id="chip-fashion">Fashion Show</button>
+                <button class="category-chip" data-category="gaming-coding" id="chip-tech">Tech & Gaming</button>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid" id="events-grid-view">
+                <!-- Event Cards dynamically injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Timeline Section -->
+    <section class="schedule-section" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Event <span class="gradient-text">Schedule</span></h2>
+                <p class="section-subtitle">Plan your days accordingly. Choose a day to see the timeline of scheduled competitions.</p>
+            </div>
+
+            <div class="schedule-tabs" id="schedule-day-tabs">
+                <button class="schedule-tab active" data-day="Day 1" id="tab-day1">Day 01</button>
+                <button class="schedule-tab" data-day="Day 2" id="tab-day2">Day 02</button>
+                <button class="schedule-tab" data-day="Day 3" id="tab-day3">Day 03</button>
+            </div>
+
+            <div class="timeline" id="timeline-schedule-view">
+                <!-- Timeline items dynamically injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Spark <span class="gradient-text">Gallery</span></h2>
+                <p class="section-subtitle">Visual highlights showcasing moments of glory, performance highlights, and artistic expressions.</p>
+            </div>
+
+            <div class="gallery-filters" id="gallery-filter-chips">
+                <button class="category-chip active" data-gallery-tag="all" id="gal-all">All Photos</button>
+                <button class="category-chip" data-gallery-tag="performance" id="gal-perf">Performances</button>
+                <button class="category-chip" data-gallery-tag="exhibition" id="gal-exhib">Exhibition</button>
+                <button class="category-chip" data-gallery-tag="crowd" id="gal-crowd">Atmosphere</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid-view">
+                <!-- Gallery elements dynamically injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Winners (Hall of Fame) -->
+    <section class="winners-section" id="winners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hall <span class="gradient-text">Of Fame</span></h2>
+                <p class="section-subtitle">Celebrating the stars of SparkFest 2026. The official lists of winning contestants will appear here.</p>
+            </div>
+
+            <div class="winners-grid" id="winners-grid-view">
+                <!-- Winners dynamic cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section" id="register">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Secure <span class="gradient-text">Your Spot</span></h2>
+                <p class="section-subtitle">Join the celebration. Fill the form below to receive your digital ticket and enter the competitions.</p>
+            </div>
+
+            <div class="register-layout">
+                <!-- Registration Form -->
+                <div class="register-card glass-panel" id="register-form-card">
+                    <form id="event-registration-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-name">Full Name *</label>
+                                <input type="text" id="reg-name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email Address *</label>
+                                <input type="email" id="reg-email" required placeholder="name@college.edu">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-phone">Phone Number *</label>
+                                <input type="tel" id="reg-phone" required placeholder="10-digit mobile number">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-college">College / University *</label>
+                                <input type="text" id="reg-college" required placeholder="Your college name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-category">Event Category *</label>
+                                <select id="reg-category" required>
+                                    <option value="" disabled selected>Choose category</option>
+                                    <option value="music-dance">Music & Dance</option>
+                                    <option value="fine-arts">Fine Arts</option>
+                                    <option value="theater-drama">Theater & Drama</option>
+                                    <option value="literary">Literary</option>
+                                    <option value="fashion">Fashion Show</option>
+                                    <option value="gaming-coding">Tech & Gaming</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-event">Specific Event *</label>
+                                <select id="reg-event" required disabled>
+                                    <option value="" disabled selected>Select category first</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="btn-submit-registration" style="width: 100%; margin-top: 16px;">
+                            Complete Registration & Generate Ticket <i class="fa-solid fa-qrcode"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="register-info-panel" id="register-info-view">
+                    <div class="info-bullet glass-panel" id="info-pass">
+                        <div class="info-bullet-icon"><i class="fa-solid fa-qrcode"></i></div>
+                        <div>
+                            <h4>Smart Digital Ticket</h4>
+                            <p>Generate an instant unique ticket with a secure mock QR code. Present it at the venue gates for seamless check-in.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-bullet glass-panel" id="info-notif">
+                        <div class="info-bullet-icon"><i class="fa-solid fa-bell"></i></div>
+                        <div>
+                            <h4>Real-Time Alerts</h4>
+                            <p>Registered students receive immediate approval notifications on their panel and emails regarding schedule delays.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-bullet glass-panel" id="info-dashboard">
+                        <div class="info-bullet-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Track Status Anytime</h4>
+                            <p>Organizers verify listings inside the Admin Dashboard to grant immediate green passes to participants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Valued <span class="gradient-text">Sponsors</span></h2>
+                <p class="section-subtitle">SparkFest is proudly supported by industry-leading sponsors pushing the bounds of creative talent.</p>
+            </div>
+            
+            <div class="sponsors-grid" id="sponsors-grid-view">
+                <div class="sponsor-logo glass-panel" id="sponsor-google">
+                    <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #a5b4fc;"><i class="fa-brands fa-google"></i> Google</span>
+                </div>
+                <div class="sponsor-logo glass-panel" id="sponsor-spotify">
+                    <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #a5b4fc;"><i class="fa-brands fa-spotify"></i> Spotify</span>
+                </div>
+                <div class="sponsor-logo glass-panel" id="sponsor-adobe">
+                    <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #a5b4fc;"><i class="fa-solid fa-square-a"></i> Adobe</span>
+                </div>
+                <div class="sponsor-logo glass-panel" id="sponsor-redbull">
+                    <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #a5b4fc;"><i class="fa-solid fa-bolt"></i> RedBull</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle">Have questions? We have got you covered. Here are answers to general student questions.</p>
+            </div>
+
+            <div class="faq-accordion" id="faq-accordion-group">
+                <div class="faq-item glass-panel" id="faq1">
+                    <button class="faq-question" id="faq-q1">
+                        How many events can a student register for?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a1">
+                        <p>There is no limit! You can register for multiple events as long as their schedules do not conflict. Check the timing breakdown carefully on the Schedule tab.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel" id="faq2">
+                    <button class="faq-question" id="faq-q2">
+                        Is there an entry fee for SparkFest competitions?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a2">
+                        <p>All events are completely free of cost for college students! Just present a valid college ID along with your digital ticket QR code at the registration desks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel" id="faq3">
+                    <button class="faq-question" id="faq-q3">
+                        How will winners be announced?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a3">
+                        <p>Winners are published in real-time by the coordinators on the website's Winners Hall of Fame. Live alerts are also pushed immediately to the announcements board.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Socials Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Reach out to the student council or general event coordinators for queries, press, or feedback.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info details -->
+                <div class="contact-info" id="contact-info-view">
+                    <h3>Contact Information</h3>
+                    <p>Have inquiries about travel, accommodation, or specific rules? Drop us a message or contact us directly.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <span>Spark University Campus, Main Arena, Grand Boulevard</span>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <span>support@sparkfest2026.com</span>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <span>+1 (555) 019-2834 (Student Council)</span>
+                        </li>
+                    </ul>
+
+                    <ul class="social-links" id="contact-social-icons">
+                        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Form -->
+                <div class="contact-form glass-panel" id="contact-form-card">
+                    <form id="site-contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" required placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" required placeholder="email@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-msg">Message</label>
+                            <textarea id="contact-msg" rows="5" required placeholder="Write your question or request..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: 100%;">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo footer-logo">
+                SparkFest<span class="logo-dot"></span>
+            </div>
+            <div class="footer-copy" id="footer-copyright-text">
+                &copy; 2026 SparkFest Event Management Committee. All Rights Reserved. Created with ❤️ for students.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Overlay -->
+    <div class="admin-login-overlay" id="admin-login-modal">
+        <div class="login-card glass-panel" id="admin-login-card">
+            <button class="modal-close-btn" id="close-admin-login-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="text-align: center; margin-bottom: 24px;">Admin Portal</h2>
+            <form id="admin-credentials-form">
+                <div class="form-group">
+                    <label for="admin-pin">Admin Password / PIN</label>
+                    <input type="password" id="admin-pin" required placeholder="Enter admin passcode (admin123)">
+                </div>
+                <div class="form-error" id="login-error-msg" style="color: #ef4444; font-size: 0.85rem; margin-bottom: 16px; text-align: center; display: none;">
+                    Invalid Passcode. Please try again.
+                </div>
+                <button type="submit" class="btn btn-accent" style="width: 100%;">Access Dashboard <i class="fa-solid fa-lock-open"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal Section (SPA-based Toggleable panel) -->
+    <div class="custom-modal" id="admin-dashboard-modal" style="display: none; width: 100%; height: 100vh; overflow-y: auto; background: var(--bg-dark); z-index: 1400; padding: 0;">
+        <header style="position: sticky; top: 0; background: rgba(7, 5, 15, 0.95); border-bottom: 1px solid var(--border-color);">
+            <div class="container nav-container">
+                <div class="logo">
+                    Dashboard<span class="logo-dot" style="background-color: var(--pink); box-shadow: 0 0 10px var(--pink);"></span>
+                </div>
+                <button class="btn btn-secondary btn-sm" id="btn-close-admin-dashboard"><i class="fa-solid fa-arrow-right-from-bracket"></i> Exit Admin Mode</button>
+            </div>
+        </header>
+
+        <section class="admin-dashboard-section" style="padding-top: 40px; padding-bottom: 100px;">
+            <div class="container">
+                <div class="dashboard-layout">
+                    <!-- Sidebar Navigation -->
+                    <div class="dashboard-sidebar glass-panel" id="admin-dashboard-sidebar">
+                        <button class="sidebar-nav-btn active" data-tab="overview" id="admin-tab-overview-btn">
+                            <i class="fa-solid fa-chart-simple"></i> Overview
+                        </button>
+                        <button class="sidebar-nav-btn" data-tab="events-crud" id="admin-tab-events-btn">
+                            <i class="fa-solid fa-calendar-days"></i> Manage Events
+                        </button>
+                        <button class="sidebar-nav-btn" data-tab="registrations" id="admin-tab-registrations-btn">
+                            <i class="fa-solid fa-address-book"></i> Registrations
+                        </button>
+                        <button class="sidebar-nav-btn" data-tab="winners-publish" id="admin-tab-winners-btn">
+                            <i class="fa-solid fa-trophy"></i> Publish Winners
+                        </button>
+                        <button class="sidebar-nav-btn" data-tab="announcements" id="admin-tab-announcements-btn">
+                            <i class="fa-solid fa-bullhorn"></i> Announcements
+                        </button>
+                    </div>
+
+                    <!-- Main Panels Content -->
+                    <div class="dashboard-content" id="admin-panels-container">
+                        
+                        <!-- Panel 1: Overview -->
+                        <div class="dashboard-panel active" id="panel-overview">
+                            <h2 style="margin-bottom: 24px;">Analytics Overview</h2>
+                            
+                            <div class="stats-grid">
+                                <div class="stat-widget glass-panel" id="stat-reg-count">
+                                    <div class="stat-meta">Total Registrations</div>
+                                    <div class="stat-val" id="db-stat-registrations">0</div>
+                                </div>
+                                <div class="stat-widget glass-panel" id="stat-active-ev-count">
+                                    <div class="stat-meta">Active Events</div>
+                                    <div class="stat-val" id="db-stat-events">0</div>
+                                </div>
+                                <div class="stat-widget glass-panel" id="stat-approved-pass">
+                                    <div class="stat-meta">Approved Tickets</div>
+                                    <div class="stat-val" id="db-stat-approved">0</div>
+                                </div>
+                                <div class="stat-widget glass-panel" id="stat-pending-approval">
+                                    <div class="stat-meta">Pending Approvals</div>
+                                    <div class="stat-val" id="db-stat-pending">0</div>
+                                </div>
+                            </div>
+
+                            <div class="glass-panel" style="padding: 30px;" id="dashboard-recent-log">
+                                <h3>Quick System Guidelines</h3>
+                                <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">
+                                    Welcome to the SparkFest Management portal. As an Administrator, you can:<br><br>
+                                    1. <strong>Manage Events:</strong> Add new items, update schedules/venues, or delete events instantly.<br>
+                                    2. <strong>Approve Registrations:</strong> View submissions, search by name, and trigger ticket approval/rejections. Approved tickets dynamically grant green passes.<br>
+                                    3. <strong>Announce Updates:</strong> Broadcast real-time tickers that reflect immediately on the participant bulletin.<br>
+                                    4. <strong>Declare Winners:</strong> Select any completed event and register the 1st, 2nd, and 3rd place holders.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: CRUD Events -->
+                        <div class="dashboard-panel" id="panel-events-crud">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                                <h2>Manage Events</h2>
+                                <button class="btn btn-primary btn-sm" id="btn-open-create-event-modal"><i class="fa-solid fa-plus"></i> Add New Event</button>
+                            </div>
+                            
+                            <div class="admin-table-container glass-panel">
+                                <table class="admin-table" id="dashboard-events-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Event Name</th>
+                                            <th>Category</th>
+                                            <th>Schedule</th>
+                                            <th>Venue</th>
+                                            <th>Capacity</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="db-events-list-body">
+                                        <!-- Injected via admin.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Registrations List -->
+                        <div class="dashboard-panel" id="panel-registrations">
+                            <h2 style="margin-bottom: 24px;">Participant Submissions</h2>
+                            
+                            <div class="events-search-bar" style="margin-bottom: 24px; max-width: 100%;">
+                                <div class="search-input-wrapper">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input type="text" id="admin-reg-search" placeholder="Search by participant name, email, college, or ticket ID...">
+                                </div>
+                                <select id="admin-reg-filter-event" style="background: var(--bg-card); width: 220px; border-color: var(--border-color); color: var(--text-white);">
+                                    <option value="all">All Events</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-table-container glass-panel">
+                                <table class="admin-table" id="dashboard-registrations-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket ID</th>
+                                            <th>Participant Details</th>
+                                            <th>College</th>
+                                            <th>Registered Event</th>
+                                            <th>Pass Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="db-registrations-list-body">
+                                        <!-- Injected via admin.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Panel 4: Publish Winners -->
+                        <div class="dashboard-panel" id="panel-winners-publish">
+                            <h2 style="margin-bottom: 20px;">Declare Event Results</h2>
+                            
+                            <div class="register-card glass-panel" style="max-width: 600px; padding: 30px;">
+                                <form id="publish-winners-form">
+                                    <div class="form-group">
+                                        <label for="winner-select-event">Select Completed Event</label>
+                                        <select id="winner-select-event" required>
+                                            <option value="" disabled selected>Select event...</option>
+                                        </select>
+                                    </div>
+
+                                    <h4 style="margin: 20px 0 10px; color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">1st Place Winner (Gold)</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="w1-name">Full Name</label>
+                                            <input type="text" id="w1-name" required placeholder="Name of gold winner">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="w1-college">College / Org</label>
+                                            <input type="text" id="w1-college" required placeholder="College name">
+                                        </div>
+                                    </div>
+
+                                    <h4 style="margin: 20px 0 10px; color: #cbd5e1; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">2nd Place Winner (Silver)</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="w2-name">Full Name</label>
+                                            <input type="text" id="w2-name" required placeholder="Name of silver winner">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="w2-college">College / Org</label>
+                                            <input type="text" id="w2-college" required placeholder="College name">
+                                        </div>
+                                    </div>
+
+                                    <h4 style="margin: 20px 0 10px; color: #b45309; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">3rd Place Winner (Bronze)</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="w3-name">Full Name</label>
+                                            <input type="text" id="w3-name" required placeholder="Name of bronze winner">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="w3-college">College / Org</label>
+                                            <input type="text" id="w3-college" required placeholder="College name">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 16px;">Publish Event Champions <i class="fa-solid fa-trophy"></i></button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Panel 5: Broadcast Announcements -->
+                        <div class="dashboard-panel" id="panel-announcements">
+                            <h2 style="margin-bottom: 20px;">Broadcast Live Tickers</h2>
+                            
+                            <div class="register-card glass-panel" style="max-width: 600px; padding: 30px; margin-bottom: 30px;">
+                                <form id="dispatch-announcement-form">
+                                    <div class="form-group">
+                                        <label for="announcement-content-input">Announcement Details *</label>
+                                        <textarea id="announcement-content-input" rows="4" required placeholder="Type the notification message here... (e.g. Solo Dance has been shifted to Room 102)"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="width: 100%;">Broadcast Alert <i class="fa-solid fa-bullhorn"></i></button>
+                                </form>
+                            </div>
+
+                            <h3>Current Active Broadcaster Feed</h3>
+                            <div class="admin-table-container glass-panel" style="margin-top: 16px;">
+                                <table class="admin-table" id="dashboard-announcements-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>Content Text</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="db-announcements-list-body">
+                                        <!-- Injected dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Event Info Modal -->
+    <div class="custom-modal" id="event-detail-modal">
+        <div class="custom-modal-content glass-panel" id="event-detail-card">
+            <button class="modal-close-btn" id="close-event-detail-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div id="event-detail-injected-content">
+                <!-- Data filled dynamically from app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Add/Edit Event Modal -->
+    <div class="custom-modal" id="admin-event-form-modal">
+        <div class="custom-modal-content glass-panel" style="max-width: 500px;">
+            <button class="modal-close-btn" id="close-admin-event-form-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="admin-event-form-title" style="margin-bottom: 24px;">Add New Event</h3>
+            <form id="admin-event-crud-form">
+                <input type="hidden" id="crud-event-id">
+                
+                <div class="form-group">
+                    <label for="crud-event-name">Event Title *</label>
+                    <input type="text" id="crud-event-name" required placeholder="e.g. Battle of Bands">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="crud-event-category">Category *</label>
+                        <select id="crud-event-category" required>
+                            <option value="" disabled selected>Choose category</option>
+                            <option value="music-dance">Music & Dance</option>
+                            <option value="fine-arts">Fine Arts</option>
+                            <option value="theater-drama">Theater & Drama</option>
+                            <option value="literary">Literary</option>
+                            <option value="fashion">Fashion Show</option>
+                            <option value="gaming-coding">Tech & Gaming</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="crud-event-capacity">Capacity Slots *</label>
+                        <input type="number" id="crud-event-capacity" required min="1" placeholder="Max participants">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="crud-event-desc">Event Description *</label>
+                    <textarea id="crud-event-desc" rows="3" required placeholder="Rules, scoring guidelines, time limits..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="crud-event-day">Schedule Day *</label>
+                        <select id="crud-event-day" required>
+                            <option value="Day 1">Day 1</option>
+                            <option value="Day 2">Day 2</option>
+                            <option value="Day 3">Day 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="crud-event-time">Timing *</label>
+                        <input type="text" id="crud-event-time" required placeholder="e.g. 10:00 AM - 12:00 PM">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="crud-event-venue">Venue *</label>
+                        <input type="text" id="crud-event-venue" required placeholder="e.g. Main Auditorium">
+                    </div>
+                    <div class="form-group">
+                        <label for="crud-event-coordinator">Coordinator Details</label>
+                        <input type="text" id="crud-event-coordinator" placeholder="e.g. Alice (+1 555-1234)">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;" id="btn-submit-crud-event">Save Event Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ticket Generator Showcase Modal -->
+    <div class="ticket-modal" id="ticket-generator-modal">
+        <div>
+            <div class="ticket" id="generated-ticket-view">
+                <div class="ticket-header">
+                    <h3 id="ticket-fest-name">SparkFest 2026</h3>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.8);">Entry Pass & Registration Receipt</p>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-info-grid">
+                        <div>
+                            <span class="ticket-label">Participant</span>
+                            <div class="ticket-val" id="ticket-participant-name">John Doe</div>
+                        </div>
+                        <div>
+                            <span class="ticket-label">Ticket ID</span>
+                            <div class="ticket-val" id="ticket-id-val" style="font-family: monospace; color: var(--gold);">#SF-90AB8</div>
+                        </div>
+                    </div>
+                    <div class="ticket-info-grid">
+                        <div>
+                            <span class="ticket-label">Registered Event</span>
+                            <div class="ticket-val" id="ticket-event-name">Street Dance Solo</div>
+                        </div>
+                        <div>
+                            <span class="ticket-label">Category</span>
+                            <div class="ticket-val" id="ticket-category-name" style="text-transform: capitalize;">Music & Dance</div>
+                        </div>
+                    </div>
+                    <div class="ticket-info-grid">
+                        <div>
+                            <span class="ticket-label">College</span>
+                            <div class="ticket-val" id="ticket-college-name">Tech Inst</div>
+                        </div>
+                        <div>
+                            <span class="ticket-label">Status</span>
+                            <div class="ticket-val" id="ticket-status-badge">
+                                <span class="badge-status badge-pending" id="ticket-status-val">PENDING APPROVAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-footer">
+                    <div>
+                        <span class="ticket-label">Security Scan</span>
+                        <p style="font-size: 0.85rem; font-weight: 500;">Authorized Gate Entrance</p>
+                    </div>
+                    <div class="ticket-qr" id="ticket-qr-box">
+                        <!-- Simulate QR code as a canvas/div drawing patterns -->
+                        <div style="width: 100%; height: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 2px; background: black;">
+                            <div style="background: white;"></div><div style="background: black;"></div><div style="background: white;"></div><div style="background: white;"></div>
+                            <div style="background: black;"></div><div style="background: white;"></div><div style="background: black;"></div><div style="background: black;"></div>
+                            <div style="background: white;"></div><div style="background: black;"></div><div style="background: white;"></div><div style="background: white;"></div>
+                            <div style="background: white;"></div><div style="background: white;"></div><div style="background: black;"></div><div style="background: white;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ticket-actions">
+                <button class="btn btn-secondary btn-sm" id="btn-close-ticket-modal">Close</button>
+                <button class="btn btn-primary btn-sm" id="btn-print-ticket"><i class="fa-solid fa-download"></i> Print / Save Pass</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="lightbox" id="gallery-lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="btn-close-lightbox" aria-label="Close Image Showcase"><i class="fa-solid fa-xmark"></i></button>
+            <img src="" alt="Expanded showcase image" id="lightbox-image-element">
+            <div class="lightbox-caption" id="lightbox-caption-text">Showcase Image Caption</div>
+        </div>
+    </div>
+
+    <!-- Application Script Files -->
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
